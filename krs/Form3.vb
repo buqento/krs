@@ -1,19 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class vglobal
-    Public Shared jenis As String
-End Class
-
 Public Class fdatamahasiswa
     Dim myadp As MySqlDataAdapter
     Dim dt As New DataTable
 
-    Sub jenis_kelamin()
-        If rbl.Checked Then
-            vglobal.jenis = "L"
-        Else
-            vglobal.jenis = "P"
-        End If
-    End Sub
     Private Sub fdatamahasiswa_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         openConnectionsMySQL()
         If connectMySQL.State = ConnectionState.Closed Then
@@ -44,9 +33,15 @@ Public Class fdatamahasiswa
 
 
     Private Sub btsimpan_Click(sender As System.Object, e As System.EventArgs) Handles btsimpan.Click
-        jenis_kelamin()
+        Dim jenis As String
+        If rbl.Checked Then
+            jenis = "L"
+        Else
+            jenis = "P"
+        End If
         Dim mycmd As New MySqlCommand("INSERT INTO data_mahasiswa (nim,nama_lengkap,jenis_kelamin,tanggal,agama,alamat,jenjang_pendidikan,program_studi) " _
-                                     + "VALUES ('" & tnim.Text & "','" & tnama.Text & "','" & vglobal.jenis & "','" & Format(dtptanggal.Value, "yyyy-MM-dd") & "','" & cbagama.Text & "','" & rtalamat.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "')", connectMySQL)
+                                     + "VALUES ('" & tnim.Text & "','" & tnama.Text & "','" & jenis & "','" & Format(dtptanggal.Value, "yyyy-MM-dd") & "','" & cbagama.Text & "','" & rtalamat.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "')", connectMySQL)
+
         Try
             If mycmd.ExecuteNonQuery() = 1 Then
                 MsgBox("Insert data berhasil")
@@ -80,10 +75,15 @@ Public Class fdatamahasiswa
     End Sub
 
     Private Sub btubah_Click(sender As System.Object, e As System.EventArgs) Handles btubah.Click
-        jenis_kelamin()
+        Dim jenis As String
+        If rbl.Checked Then
+            jenis = "L"
+        Else
+            jenis = "P"
+        End If
         If tnim.Text <> "" Then
             Dim mycmd As New MySqlCommand("UPDATE data_mahasiswa SET " _
-                                          + " nama_lengkap='" & tnama.Text & "',jenis_kelamin='" & vglobal.jenis & "',tanggal='" & Format(dtptanggal.Value, "yyyy-MM-dd") & "',agama='" & cbagama.Text & "',alamat='" & rtalamat.Text & "',jenjang_pendidikan='" & cbjenjangpendidikan.Text & "',program_studi='" & cbprogramstudi.Text & "'" _
+                                          + " nama_lengkap='" & tnama.Text & "',jenis_kelamin='" & jenis & "',tanggal='" & Format(dtptanggal.Value, "yyyy-MM-dd") & "',agama='" & cbagama.Text & "',alamat='" & rtalamat.Text & "',jenjang_pendidikan='" & cbjenjangpendidikan.Text & "',program_studi='" & cbprogramstudi.Text & "'" _
                                           + " WHERE nim='" & tnim.Text & "'", connectMySQL)
             Try
                 If mycmd.ExecuteNonQuery() = 1 Then

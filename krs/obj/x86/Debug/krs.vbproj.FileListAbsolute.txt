@@ -8,4 +8,4 @@ F:\Developer\VB.net\krs\krs\bin\Debug\krs.xml
 F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.exe
 F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.xml
 F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.pdb
-F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.vglobal.resources
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fdatamahasiswa.resources
