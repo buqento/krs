@@ -1,0 +1,11 @@
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.flogin.resources
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fmenuutama.resources
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.Resources.resources
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.vbproj.GenerateResource.Cache
+F:\Developer\VB.net\krs\krs\bin\Debug\krs.exe
+F:\Developer\VB.net\krs\krs\bin\Debug\krs.pdb
+F:\Developer\VB.net\krs\krs\bin\Debug\krs.xml
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.exe
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.xml
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.pdb
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.vglobal.resources
