@@ -46,12 +46,12 @@ Partial Class fdatamahasiswa
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.ttotalmhs = New System.Windows.Forms.TextBox()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btdetail = New System.Windows.Forms.Button()
         Me.dgvMhs = New System.Windows.Forms.DataGridView()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -296,12 +296,12 @@ Partial Class fdatamahasiswa
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.TextBox4)
+        Me.TabPage2.Controls.Add(Me.ttotalmhs)
         Me.TabPage2.Controls.Add(Me.RadioButton6)
         Me.TabPage2.Controls.Add(Me.RadioButton5)
         Me.TabPage2.Controls.Add(Me.RadioButton4)
         Me.TabPage2.Controls.Add(Me.RadioButton3)
-        Me.TabPage2.Controls.Add(Me.Button5)
+        Me.TabPage2.Controls.Add(Me.btdetail)
         Me.TabPage2.Controls.Add(Me.dgvMhs)
         Me.TabPage2.Controls.Add(Me.TextBox3)
         Me.TabPage2.Controls.Add(Me.Label11)
@@ -316,12 +316,12 @@ Partial Class fdatamahasiswa
         Me.TabPage2.Text = "Lihat Data Mahasiswa"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'ttotalmhs
         '
-        Me.TextBox4.Location = New System.Drawing.Point(363, 381)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 11
+        Me.ttotalmhs.Location = New System.Drawing.Point(363, 381)
+        Me.ttotalmhs.Name = "ttotalmhs"
+        Me.ttotalmhs.Size = New System.Drawing.Size(100, 20)
+        Me.ttotalmhs.TabIndex = 11
         '
         'RadioButton6
         '
@@ -365,14 +365,14 @@ Partial Class fdatamahasiswa
         Me.RadioButton3.Text = "Teknik Informatika"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btdetail
         '
-        Me.Button5.Location = New System.Drawing.Point(25, 303)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 6
-        Me.Button5.Text = "Detail"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btdetail.Location = New System.Drawing.Point(25, 303)
+        Me.btdetail.Name = "btdetail"
+        Me.btdetail.Size = New System.Drawing.Size(75, 23)
+        Me.btdetail.TabIndex = 6
+        Me.btdetail.Text = "Detail"
+        Me.btdetail.UseVisualStyleBackColor = True
         '
         'dgvMhs
         '
@@ -472,10 +472,10 @@ Partial Class fdatamahasiswa
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents cbjenjangpendidikan2 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents ttotalmhs As System.Windows.Forms.TextBox
     Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents btdetail As System.Windows.Forms.Button
 End Class

@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-'tes git
+
 Public Class fdatamahasiswa
     Dim myadp As MySqlDataAdapter
     Dim dt As New DataTable
@@ -17,6 +17,8 @@ Public Class fdatamahasiswa
         cbagama.SelectedIndex = 4
         cbjenjangpendidikan.SelectedIndex = 0
         cbprogramstudi.SelectedIndex = 0
+        cbjenjangpendidikan2.SelectedIndex = 0
+        ttotalmhs.Text = dgvMhs.RowCount - 1
     End Sub
 
     Private Sub baca_data_mahasiswa()
@@ -32,6 +34,18 @@ Public Class fdatamahasiswa
         End Try
     End Sub
 
+    Private Sub filter_data_mahasiswa()
+        Dim query As String
+        query = "SELECT * FROM data_mahasiswa WHERE jenjang_pendidikan='" & cbjenjangpendidikan2.Text & "'"
+        Try
+            myadp = New MySqlDataAdapter(query, connectMySQL)
+            dt.Clear()
+            myadp.Fill(dt)
+            dgvMhs.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub btsimpan_Click(sender As System.Object, e As System.EventArgs) Handles btsimpan.Click
         Dim jenis As String
@@ -98,5 +112,14 @@ Public Class fdatamahasiswa
             MsgBox("Masukkan NIM")
         End If
 
+    End Sub
+
+    Private Sub cbjenjangpendidikan2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbjenjangpendidikan2.SelectedIndexChanged
+
+    End Sub
+
+
+    Private Sub btdetail_Click(sender As System.Object, e As System.EventArgs) Handles btdetail.Click
+        filter_data_mahasiswa()
     End Sub
 End Class
