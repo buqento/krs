@@ -18,7 +18,7 @@ Public Class fdatamahasiswa
         cbjenjangpendidikan.SelectedIndex = 0
         cbprogramstudi.SelectedIndex = 0
         cbjenjangpendidikan2.SelectedIndex = 0
-        ttotalmhs.Text = dgvMhs.RowCount - 1
+        'ttotalmhs.Text = dgvMhs.RowCount - 1
     End Sub
 
     Private Sub baca_data_mahasiswa()
@@ -54,8 +54,8 @@ Public Class fdatamahasiswa
         Else
             jenis = "P"
         End If
-        Dim mycmd As New MySqlCommand("INSERT INTO data_mahasiswa (nim,nama_lengkap,jenis_kelamin,tanggal,agama,alamat,jenjang_pendidikan,program_studi) " _
-                                     + "VALUES ('" & tnim.Text & "','" & tnama.Text & "','" & jenis & "','" & Format(dtptanggal.Value, "yyyy-MM-dd") & "','" & cbagama.Text & "','" & rtalamat.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "')", connectMySQL)
+        Dim mycmd As New MySqlCommand("INSERT INTO data_mahasiswa (nim,nama_lengkap,jenis_kelamin,tempat_lahir,tanggal,agama,alamat,jenjang_pendidikan,program_studi) " _
+                                     + "VALUES ('" & tnim.Text & "','" & tnama.Text & "','" & jenis & "','" & ttempatlahir.Text & "','" & Format(dtptanggal.Value, "yyyy-MM-dd") & "','" & cbagama.Text & "','" & rtalamat.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "')", connectMySQL)
 
         Try
             If mycmd.ExecuteNonQuery() = 1 Then
@@ -115,11 +115,37 @@ Public Class fdatamahasiswa
     End Sub
 
     Private Sub cbjenjangpendidikan2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbjenjangpendidikan2.SelectedIndexChanged
-
+        If cbjenjangpendidikan2.SelectedIndex = 1 Then
+            cbprogramstudi2.Items.Clear()
+            cbprogramstudi2.Items.Add("Teknik Informatika")
+            cbprogramstudi2.Items.Add("Sistem Informasi")
+        Else
+            cbprogramstudi2.Items.Clear()
+            cbprogramstudi2.Items.Add("Manajemen Informatika")
+            cbprogramstudi2.Items.Add("Komputerisasi Akuntansi")
+        End If
+        cbprogramstudi2.SelectedIndex = 0
     End Sub
 
 
     Private Sub btdetail_Click(sender As System.Object, e As System.EventArgs) Handles btdetail.Click
         filter_data_mahasiswa()
+    End Sub
+
+    Private Sub Label5_Click(sender As System.Object, e As System.EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub cbjenjangpendidikan_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbjenjangpendidikan.SelectedIndexChanged
+        If cbjenjangpendidikan.SelectedIndex = 1 Then
+            cbprogramstudi.Items.Clear()
+            cbprogramstudi.Items.Add("Teknik Informatika")
+            cbprogramstudi.Items.Add("Sistem Informasi")
+        Else
+            cbprogramstudi.Items.Clear()
+            cbprogramstudi.Items.Add("Manajemen Informatika")
+            cbprogramstudi.Items.Add("Komputerisasi Akuntansi")
+        End If
+        cbprogramstudi.SelectedIndex = 0
     End Sub
 End Class

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2016 at 07:57 AM
+-- Generation Time: Aug 23, 2016 at 09:32 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -27,14 +27,28 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `data_krs` (
-  `kode_mata_kuliah` varchar(10) NOT NULL,
+  `no_krs` varchar(50) NOT NULL,
   `nim` varchar(9) NOT NULL,
-  `nama_mata_kuliah` varchar(50) NOT NULL,
-  `nama_mahasiswa` varchar(50) NOT NULL,
-  `jurusan` varchar(35) NOT NULL,
-  `semester` varchar(5) NOT NULL,
+  `kode_mata_kuliah` varchar(10) NOT NULL,
+  `nama_matakuliah` varchar(50) NOT NULL,
+  `sks` int(11) NOT NULL,
+  `semester` int(1) NOT NULL,
+  `dosen_pengampu` varchar(50) NOT NULL,
   `tahun_akademik` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_krs`
+--
+
+INSERT INTO `data_krs` (`no_krs`, `nim`, `kode_mata_kuliah`, `nama_matakuliah`, `sks`, `semester`, `dosen_pengampu`, `tahun_akademik`) VALUES
+('KRS-201509070001', '222222222', 'mk-001', 'Matematika Diskrit', 4, 1, 'Buqento, S.Kom.', 2015),
+('KRS-201509070001', '222222222', 'mk-002', 'Elektronika Dasar', 3, 1, 'King Richard, MT.', 2015),
+('KRS-201509070001', '666666666', 'mk-002', 'Elektronika Dasar', 3, 1, 'King Richard, MT.', 2015),
+('KRS-201509070001', '666666666', 'mk-003', 'Arsitektur Komputer', 4, 1, 'Franseska, M.Kom.', 2015),
+('KRS-201509070001', '777777777', 'mk-003', 'Arsitektur Komputer', 4, 1, 'Franseska, M.Kom.', 2015),
+('KRS-201509070001', '666666666', 'mk-001', 'Matematika Diskrit', 4, 1, 'Buqento, S.Kom.', 2015),
+('KRS-201509070001', '111111111', 'mk-001', 'Matematika Diskrit', 4, 1, 'Buqento, S.Kom.', 2015);
 
 -- --------------------------------------------------------
 
@@ -46,6 +60,7 @@ CREATE TABLE `data_mahasiswa` (
   `nim` varchar(9) NOT NULL,
   `nama_lengkap` varchar(50) NOT NULL,
   `jenis_kelamin` varchar(1) NOT NULL,
+  `tempat_lahir` varchar(50) NOT NULL,
   `tanggal` date NOT NULL,
   `agama` varchar(35) NOT NULL,
   `alamat` text NOT NULL,
@@ -57,11 +72,13 @@ CREATE TABLE `data_mahasiswa` (
 -- Dumping data for table `data_mahasiswa`
 --
 
-INSERT INTO `data_mahasiswa` (`nim`, `nama_lengkap`, `jenis_kelamin`, `tanggal`, `agama`, `alamat`, `jenjang_pendidikan`, `program_studi`) VALUES
-('111111112', 'nn', 'P', '1980-08-21', 'Islam', 'Alamat Rumah', 'D4', 'Sistem Informasi'),
-('333333333', 'Nama saya', 'L', '2016-08-21', 'Kristen Protestan', 'Alamat Rumah', 'SMU', 'Teknik Informatika'),
-('444444444', 'Nama saya', 'L', '1990-10-25', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Teknik Informatika'),
-('666666666', 'Nama saya', 'P', '2016-08-21', 'Kristen Protestan', 'Alamat Rumah', 'SMU', 'Teknik Informatika');
+INSERT INTO `data_mahasiswa` (`nim`, `nama_lengkap`, `jenis_kelamin`, `tempat_lahir`, `tanggal`, `agama`, `alamat`, `jenjang_pendidikan`, `program_studi`) VALUES
+('111111111', 'King Richard', 'L', 'Masohi', '2016-08-23', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Teknik Informatika'),
+('222222222', 'Theresia', 'L', '', '2016-08-23', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Sistem Informasi'),
+('333333333', 'Nama saya', 'L', '', '2016-08-21', 'Kristen Protestan', 'Alamat Rumah', 'SMU', 'Teknik Informatika'),
+('444444444', 'Nama saya', 'L', '', '1990-10-25', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Teknik Informatika'),
+('666666666', 'Nama saya', 'P', '', '2016-08-21', 'Kristen Protestan', 'Alamat Rumah', 'SMU', 'Teknik Informatika'),
+('777777777', 'Britney', 'P', '', '1990-08-21', 'Katolik', 'Alamat Kantor', 'S2', 'Sistem Informasi');
 
 -- --------------------------------------------------------
 
@@ -71,14 +88,23 @@ INSERT INTO `data_mahasiswa` (`nim`, `nama_lengkap`, `jenis_kelamin`, `tanggal`,
 
 CREATE TABLE `data_mata_kuliah` (
   `kode_mata_kuliah` varchar(10) NOT NULL,
-  `dosen_pengajar` varchar(50) NOT NULL,
-  `jenjang_pendidikan` varchar(10) NOT NULL,
-  `program_studi` varchar(50) NOT NULL,
-  `semester_ganjil_genap` varchar(5) NOT NULL,
   `nama_mata_kuliah` varchar(50) NOT NULL,
   `sks` int(11) NOT NULL,
-  `tahun_ajaran` int(11) NOT NULL
+  `semester` int(2) NOT NULL,
+  `tahun_ajaran` int(11) NOT NULL,
+  `jenjang_pendidikan` varchar(10) NOT NULL,
+  `program_studi` varchar(50) NOT NULL,
+  `dosen_pengampu` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_mata_kuliah`
+--
+
+INSERT INTO `data_mata_kuliah` (`kode_mata_kuliah`, `nama_mata_kuliah`, `sks`, `semester`, `tahun_ajaran`, `jenjang_pendidikan`, `program_studi`, `dosen_pengampu`) VALUES
+('mk-001', 'Matematika Diskrit', 4, 1, 2017, 'S1', 'Teknik Informatika', 'Buqento, S.Kom.'),
+('mk-002', 'Elektronika Dasar', 3, 1, 2016, 'S1', 'Teknik Informatika', 'King Richard, MT.'),
+('mk-003', 'Arsitektur Komputer', 4, 1, 2016, 'S1', 'Teknik Informatika', 'Franseska, M.Kom.');
 
 -- --------------------------------------------------------
 
@@ -104,12 +130,6 @@ INSERT INTO `data_user` (`id_user`, `username`, `password`) VALUES
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `data_krs`
---
-ALTER TABLE `data_krs`
-  ADD PRIMARY KEY (`kode_mata_kuliah`);
 
 --
 -- Indexes for table `data_mahasiswa`
