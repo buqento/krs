@@ -49,6 +49,7 @@ Partial Class fkrs
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbsemester = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.tnokrs = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvkrs, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,12 +76,12 @@ Partial Class fkrs
         'lbnokrs
         '
         Me.lbnokrs.AutoSize = True
-        Me.lbnokrs.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbnokrs.Location = New System.Drawing.Point(18, 15)
+        Me.lbnokrs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbnokrs.Location = New System.Drawing.Point(21, 19)
         Me.lbnokrs.Name = "lbnokrs"
-        Me.lbnokrs.Size = New System.Drawing.Size(206, 25)
+        Me.lbnokrs.Size = New System.Drawing.Size(63, 13)
         Me.lbnokrs.TabIndex = 1
-        Me.lbnokrs.Text = "KRS-201509070001"
+        Me.lbnokrs.Text = "Nomor KRS"
         '
         'Label3
         '
@@ -305,11 +306,19 @@ Partial Class fkrs
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Semester"
         '
+        'tnokrs
+        '
+        Me.tnokrs.Location = New System.Drawing.Point(24, 42)
+        Me.tnokrs.Name = "tnokrs"
+        Me.tnokrs.Size = New System.Drawing.Size(206, 20)
+        Me.tnokrs.TabIndex = 9
+        '
         'fkrs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(769, 406)
+        Me.Controls.Add(Me.tnokrs)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cbsemester)
         Me.Controls.Add(Me.GroupBox2)
@@ -358,4 +367,5 @@ Partial Class fkrs
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents tprogramstudi As System.Windows.Forms.TextBox
     Friend WithEvents tjenjangpendidikan As System.Windows.Forms.TextBox
+    Friend WithEvents tnokrs As System.Windows.Forms.TextBox
 End Class

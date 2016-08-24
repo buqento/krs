@@ -43,7 +43,6 @@ Partial Class fmtkuliah
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btkeluar = New System.Windows.Forms.Button()
         Me.bthapus = New System.Windows.Forms.Button()
-        Me.btbatal = New System.Windows.Forms.Button()
         Me.btsimpan = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.dgvmatakuliah = New System.Windows.Forms.DataGridView()
@@ -84,7 +83,6 @@ Partial Class fmtkuliah
         Me.tsks.Name = "tsks"
         Me.tsks.Size = New System.Drawing.Size(73, 20)
         Me.tsks.TabIndex = 6
-        Me.tsks.Text = "4"
         '
         'tnamamatakuliah
         '
@@ -92,7 +90,6 @@ Partial Class fmtkuliah
         Me.tnamamatakuliah.Name = "tnamamatakuliah"
         Me.tnamamatakuliah.Size = New System.Drawing.Size(203, 20)
         Me.tnamamatakuliah.TabIndex = 5
-        Me.tnamamatakuliah.Text = "Teknik Pemrogramman"
         '
         'tkodematakuliah
         '
@@ -100,7 +97,6 @@ Partial Class fmtkuliah
         Me.tkodematakuliah.Name = "tkodematakuliah"
         Me.tkodematakuliah.Size = New System.Drawing.Size(73, 20)
         Me.tkodematakuliah.TabIndex = 4
-        Me.tkodematakuliah.Text = "mk-001"
         '
         'Label4
         '
@@ -159,7 +155,6 @@ Partial Class fmtkuliah
         Me.tkodedosen.Name = "tkodedosen"
         Me.tkodedosen.Size = New System.Drawing.Size(210, 20)
         Me.tkodedosen.TabIndex = 7
-        Me.tkodedosen.Text = "King Richard, MT."
         '
         'cbprogramstudi
         '
@@ -228,7 +223,6 @@ Partial Class fmtkuliah
         '
         Me.Panel3.Controls.Add(Me.btkeluar)
         Me.Panel3.Controls.Add(Me.bthapus)
-        Me.Panel3.Controls.Add(Me.btbatal)
         Me.Panel3.Controls.Add(Me.btsimpan)
         Me.Panel3.Location = New System.Drawing.Point(12, 149)
         Me.Panel3.Name = "Panel3"
@@ -237,7 +231,7 @@ Partial Class fmtkuliah
         '
         'btkeluar
         '
-        Me.btkeluar.Location = New System.Drawing.Point(251, 16)
+        Me.btkeluar.Location = New System.Drawing.Point(170, 16)
         Me.btkeluar.Name = "btkeluar"
         Me.btkeluar.Size = New System.Drawing.Size(75, 23)
         Me.btkeluar.TabIndex = 3
@@ -246,21 +240,12 @@ Partial Class fmtkuliah
         '
         'bthapus
         '
-        Me.bthapus.Location = New System.Drawing.Point(170, 16)
+        Me.bthapus.Location = New System.Drawing.Point(89, 16)
         Me.bthapus.Name = "bthapus"
         Me.bthapus.Size = New System.Drawing.Size(75, 23)
         Me.bthapus.TabIndex = 2
         Me.bthapus.Text = "&Hapus"
         Me.bthapus.UseVisualStyleBackColor = True
-        '
-        'btbatal
-        '
-        Me.btbatal.Location = New System.Drawing.Point(89, 16)
-        Me.btbatal.Name = "btbatal"
-        Me.btbatal.Size = New System.Drawing.Size(75, 23)
-        Me.btbatal.TabIndex = 1
-        Me.btbatal.Text = "&Batal"
-        Me.btbatal.UseVisualStyleBackColor = True
         '
         'btsimpan
         '
@@ -329,7 +314,6 @@ Partial Class fmtkuliah
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents btkeluar As System.Windows.Forms.Button
     Friend WithEvents bthapus As System.Windows.Forms.Button
-    Friend WithEvents btbatal As System.Windows.Forms.Button
     Friend WithEvents btsimpan As System.Windows.Forms.Button
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents dgvmatakuliah As System.Windows.Forms.DataGridView

@@ -24,6 +24,8 @@ Partial Class fdatamahasiswa
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ttempatlahir = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.cbprogramstudi = New System.Windows.Forms.ComboBox()
         Me.cbjenjangpendidikan = New System.Windows.Forms.ComboBox()
         Me.rtalamat = New System.Windows.Forms.RichTextBox()
@@ -48,14 +50,9 @@ Partial Class fdatamahasiswa
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cbprogramstudi2 = New System.Windows.Forms.ComboBox()
-        Me.btdetail = New System.Windows.Forms.Button()
         Me.dgvMhs = New System.Windows.Forms.DataGridView()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbjenjangpendidikan2 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.ttempatlahir = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -105,12 +102,28 @@ Partial Class fdatamahasiswa
         Me.TabPage1.Text = "Data Mahasiswa"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'ttempatlahir
+        '
+        Me.ttempatlahir.Location = New System.Drawing.Point(157, 118)
+        Me.ttempatlahir.Name = "ttempatlahir"
+        Me.ttempatlahir.Size = New System.Drawing.Size(200, 20)
+        Me.ttempatlahir.TabIndex = 22
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(57, 121)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(69, 13)
+        Me.Label11.TabIndex = 21
+        Me.Label11.Text = "Tempat Lahir"
+        '
         'cbprogramstudi
         '
         Me.cbprogramstudi.FormattingEnabled = True
         Me.cbprogramstudi.Location = New System.Drawing.Point(157, 282)
         Me.cbprogramstudi.Name = "cbprogramstudi"
-        Me.cbprogramstudi.Size = New System.Drawing.Size(210, 21)
+        Me.cbprogramstudi.Size = New System.Drawing.Size(200, 21)
         Me.cbprogramstudi.TabIndex = 20
         '
         'cbjenjangpendidikan
@@ -126,9 +139,9 @@ Partial Class fdatamahasiswa
         '
         Me.rtalamat.Location = New System.Drawing.Point(157, 197)
         Me.rtalamat.Name = "rtalamat"
-        Me.rtalamat.Size = New System.Drawing.Size(210, 48)
+        Me.rtalamat.Size = New System.Drawing.Size(200, 48)
         Me.rtalamat.TabIndex = 18
-        Me.rtalamat.Text = "Alamat Rumah"
+        Me.rtalamat.Text = ""
         '
         'cbagama
         '
@@ -171,7 +184,7 @@ Partial Class fdatamahasiswa
         '
         'tnim
         '
-        Me.tnim.Location = New System.Drawing.Point(157, 63)
+        Me.tnim.Location = New System.Drawing.Point(157, 35)
         Me.tnim.MaxLength = 9
         Me.tnim.Name = "tnim"
         Me.tnim.Size = New System.Drawing.Size(100, 20)
@@ -179,15 +192,14 @@ Partial Class fdatamahasiswa
         '
         'tnama
         '
-        Me.tnama.Location = New System.Drawing.Point(157, 37)
+        Me.tnama.Location = New System.Drawing.Point(157, 61)
         Me.tnama.Name = "tnama"
-        Me.tnama.Size = New System.Drawing.Size(100, 20)
-        Me.tnama.TabIndex = 12
-        Me.tnama.Text = "King Richard"
+        Me.tnama.Size = New System.Drawing.Size(200, 20)
+        Me.tnama.TabIndex = 1
         '
         'btkeluar
         '
-        Me.btkeluar.Location = New System.Drawing.Point(292, 334)
+        Me.btkeluar.Location = New System.Drawing.Point(282, 334)
         Me.btkeluar.Name = "btkeluar"
         Me.btkeluar.Size = New System.Drawing.Size(75, 23)
         Me.btkeluar.TabIndex = 11
@@ -196,7 +208,7 @@ Partial Class fdatamahasiswa
         '
         'btubah
         '
-        Me.btubah.Location = New System.Drawing.Point(211, 334)
+        Me.btubah.Location = New System.Drawing.Point(203, 334)
         Me.btubah.Name = "btubah"
         Me.btubah.Size = New System.Drawing.Size(75, 23)
         Me.btubah.TabIndex = 10
@@ -205,7 +217,7 @@ Partial Class fdatamahasiswa
         '
         'bthapus
         '
-        Me.bthapus.Location = New System.Drawing.Point(130, 334)
+        Me.bthapus.Location = New System.Drawing.Point(122, 334)
         Me.bthapus.Name = "bthapus"
         Me.bthapus.Size = New System.Drawing.Size(75, 23)
         Me.bthapus.TabIndex = 9
@@ -214,7 +226,7 @@ Partial Class fdatamahasiswa
         '
         'btsimpan
         '
-        Me.btsimpan.Location = New System.Drawing.Point(49, 334)
+        Me.btsimpan.Location = New System.Drawing.Point(41, 334)
         Me.btsimpan.Name = "btsimpan"
         Me.btsimpan.Size = New System.Drawing.Size(75, 23)
         Me.btsimpan.TabIndex = 8
@@ -278,7 +290,7 @@ Partial Class fdatamahasiswa
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(101, 63)
+        Me.Label2.Location = New System.Drawing.Point(97, 35)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(27, 13)
         Me.Label2.TabIndex = 1
@@ -287,7 +299,7 @@ Partial Class fdatamahasiswa
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(48, 37)
+        Me.Label1.Location = New System.Drawing.Point(46, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 13)
         Me.Label1.TabIndex = 0
@@ -297,10 +309,7 @@ Partial Class fdatamahasiswa
         '
         Me.TabPage2.Controls.Add(Me.Label12)
         Me.TabPage2.Controls.Add(Me.cbprogramstudi2)
-        Me.TabPage2.Controls.Add(Me.btdetail)
         Me.TabPage2.Controls.Add(Me.dgvMhs)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
-        Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.cbjenjangpendidikan2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -328,40 +337,15 @@ Partial Class fdatamahasiswa
         Me.cbprogramstudi2.Size = New System.Drawing.Size(236, 21)
         Me.cbprogramstudi2.TabIndex = 12
         '
-        'btdetail
-        '
-        Me.btdetail.Location = New System.Drawing.Point(128, 116)
-        Me.btdetail.Name = "btdetail"
-        Me.btdetail.Size = New System.Drawing.Size(75, 23)
-        Me.btdetail.TabIndex = 6
-        Me.btdetail.Text = "Detail"
-        Me.btdetail.UseVisualStyleBackColor = True
-        '
         'dgvMhs
         '
         Me.dgvMhs.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dgvMhs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMhs.Location = New System.Drawing.Point(8, 145)
+        Me.dgvMhs.Location = New System.Drawing.Point(8, 100)
         Me.dgvMhs.Name = "dgvMhs"
-        Me.dgvMhs.Size = New System.Drawing.Size(455, 267)
+        Me.dgvMhs.Size = New System.Drawing.Size(482, 312)
         Me.dgvMhs.TabIndex = 5
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(128, 80)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(335, 20)
-        Me.TextBox3.TabIndex = 4
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(87, 80)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(35, 13)
-        Me.Label10.TabIndex = 2
-        Me.Label10.Text = "Nama"
         '
         'Label9
         '
@@ -380,23 +364,6 @@ Partial Class fdatamahasiswa
         Me.cbjenjangpendidikan2.Name = "cbjenjangpendidikan2"
         Me.cbjenjangpendidikan2.Size = New System.Drawing.Size(75, 21)
         Me.cbjenjangpendidikan2.TabIndex = 0
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(57, 121)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(69, 13)
-        Me.Label11.TabIndex = 21
-        Me.Label11.Text = "Tempat Lahir"
-        '
-        'ttempatlahir
-        '
-        Me.ttempatlahir.Location = New System.Drawing.Point(157, 118)
-        Me.ttempatlahir.Name = "ttempatlahir"
-        Me.ttempatlahir.Size = New System.Drawing.Size(200, 20)
-        Me.ttempatlahir.TabIndex = 22
-        Me.ttempatlahir.Text = "Masohi"
         '
         'fdatamahasiswa
         '
@@ -440,11 +407,8 @@ Partial Class fdatamahasiswa
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents dgvMhs As System.Windows.Forms.DataGridView
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents cbjenjangpendidikan2 As System.Windows.Forms.ComboBox
-    Friend WithEvents btdetail As System.Windows.Forms.Button
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents cbprogramstudi2 As System.Windows.Forms.ComboBox
     Friend WithEvents ttempatlahir As System.Windows.Forms.TextBox

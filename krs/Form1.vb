@@ -15,6 +15,8 @@ Public Class flogin
             Me.Hide()
         Else
             MsgBox("Username atau password yang dimasukkan salah")
+            tusername.Focus()
+            tusername.SelectAll()
         End If
     End Sub
 
@@ -31,5 +33,26 @@ Public Class flogin
                 MsgBox(ex.Message)
             End Try
         End If
+        tusername.Focus()
+    End Sub
+
+    Private Sub tusername_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tusername.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            tpassword.Focus()
+        End If
+    End Sub
+
+    Private Sub tusername_TextChanged(sender As System.Object, e As System.EventArgs) Handles tusername.TextChanged
+
+    End Sub
+
+    Private Sub tpassword_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tpassword.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            btnlogin.Focus()
+        End If
+    End Sub
+
+    Private Sub tpassword_TextChanged(sender As System.Object, e As System.EventArgs) Handles tpassword.TextChanged
+
     End Sub
 End Class

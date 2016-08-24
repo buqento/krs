@@ -56,15 +56,23 @@ Public Class fkrs
 
     Private Sub fkrs_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         openConnectionsMySQL()
+        If connectMySQL.State = ConnectionState.Closed Then
+            Try
+                connectMySQL.Open()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
         filter_data_krs()
         cbtahunakademik.SelectedIndex = 0
         cbsemester.SelectedIndex = 0
+        tnokrs.Focus()
     End Sub
 
     Private Sub btkontrak_Click(sender As System.Object, e As System.EventArgs) Handles btkontrak.Click
         openConnectionsMySQL()
         Dim mycmd As New MySqlCommand("INSERT INTO data_krs(no_krs,nim,kode_mata_kuliah,nama_matakuliah,sks,semester,dosen_pengampu,tahun_akademik) " _
-                             + "VALUES ('" & lbnokrs.Text & "','" & tnim.Text & "','" & tkodemk.Text & "','" & tnamamk.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & tdosenpengampu.Text & "','" & cbtahunakademik.Text & "')", connectMySQL)
+                             + "VALUES ('" & tnokrs.Text & "','" & tnim.Text & "','" & tkodemk.Text & "','" & tnamamk.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & tdosenpengampu.Text & "','" & cbtahunakademik.Text & "')", connectMySQL)
 
         Try
             If mycmd.ExecuteNonQuery() = 1 Then
@@ -85,13 +93,28 @@ Public Class fkrs
         If (e.KeyChar = Chr(13)) Then
             filter_data_mahasiswa()
             filter_data_krs()
+            tkodemk.Focus()
         End If
     End Sub
 
     Private Sub tkodemk_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tkodemk.KeyPress
         If (e.KeyChar = Chr(13)) Then
             filter_data_matakuliah()
+            btkontrak.Focus()
         End If
     End Sub
 
+    Private Sub tnim_TextChanged(sender As System.Object, e As System.EventArgs) Handles tnim.TextChanged
+
+    End Sub
+
+    Private Sub tnokrs_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tnokrs.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            tnim.Focus()
+        End If
+    End Sub
+
+    Private Sub tnokrs_TextChanged(sender As System.Object, e As System.EventArgs) Handles tnokrs.TextChanged
+
+    End Sub
 End Class

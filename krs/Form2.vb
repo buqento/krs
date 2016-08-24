@@ -15,4 +15,8 @@
     Private Sub DataKRSToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles DataKRSToolStripMenuItem.Click
         fkrs.Show()
     End Sub
+
+    Private Sub fmenuutama_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
