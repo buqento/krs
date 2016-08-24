@@ -101,7 +101,7 @@ Public Class fdatamahasiswa
         End If
     End Sub
 
-    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs)
         Close()
     End Sub
 
@@ -258,5 +258,9 @@ Public Class fdatamahasiswa
 
     Private Sub cbprogramstudi2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbprogramstudi2.SelectedIndexChanged
         filter_data_mahasiswa()
+    End Sub
+
+    Private Sub btkeluar_Click(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
+        Close()
     End Sub
 End Class

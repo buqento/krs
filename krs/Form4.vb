@@ -3,25 +3,6 @@
 Public Class fmtkuliah
     Dim myadp As MySqlDataAdapter
     Dim dt As New DataTable
-    Private Sub btsimpan_Click(sender As System.Object, e As System.EventArgs) Handles btsimpan.Click
-        Dim mycmd As New MySqlCommand("INSERT INTO data_mata_kuliah (kode_mata_kuliah,nama_mata_kuliah,sks,semester,tahun_ajaran,jenjang_pendidikan,program_studi,dosen_pengampu) " _
-                                     + "VALUES ('" & tkodematakuliah.Text & "','" & tnamamatakuliah.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & cbtahunajaran.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "','" & tkodedosen.Text & "')", connectMySQL)
-
-        If (tkodematakuliah.Text <> "" And tnamamatakuliah.Text <> "" And tsks.Text <> "" And tkodedosen.Text <> "") Then
-            Try
-                If mycmd.ExecuteNonQuery() = 1 Then
-                    MsgBox("Insert data berhasil")
-                    Call baca_data_matakuliah()
-                    Exit Sub
-                End If
-            Catch ex As MySqlException
-                MsgBox("Kode matakuliah telah terdaftar")
-            End Try
-        Else
-            MsgBox("Periksa inputan data")
-
-        End If
-    End Sub
 
     Private Sub baca_data_matakuliah()
         Dim query As String
@@ -64,7 +45,7 @@ Public Class fmtkuliah
         cbprogramstudi.SelectedIndex = 0
     End Sub
 
-    Private Sub btkeluar_Click(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
+    Private Sub btkeluar_Click(sender As System.Object, e As System.EventArgs)
         Close()
     End Sub
 
@@ -90,11 +71,31 @@ Public Class fmtkuliah
         End If
     End Sub
 
-    Private Sub btbatal_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub btsimpan_Click(sender As System.Object, e As System.EventArgs) Handles btsimpan.Click
+        Dim mycmd As New MySqlCommand("INSERT INTO data_mata_kuliah (kode_mata_kuliah,nama_mata_kuliah,sks,semester,tahun_ajaran,jenjang_pendidikan,program_studi,dosen_pengampu) " _
+                                    + "VALUES ('" & tkodematakuliah.Text & "','" & tnamamatakuliah.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & cbtahunajaran.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "','" & tkodedosen.Text & "')", connectMySQL)
 
+        If (tkodematakuliah.Text <> "" And tnamamatakuliah.Text <> "" And tsks.Text <> "" And tkodedosen.Text <> "") Then
+            Try
+                If mycmd.ExecuteNonQuery() = 1 Then
+                    MsgBox("Insert data berhasil")
+                    Call baca_data_matakuliah()
+                    Exit Sub
+                End If
+            Catch ex As MySqlException
+                MsgBox("Kode matakuliah telah terdaftar")
+            End Try
+        Else
+            MsgBox("Periksa inputan data")
+
+        End If
     End Sub
 
     Private Sub bthapus_Click(sender As System.Object, e As System.EventArgs) Handles bthapus.Click
 
+    End Sub
+
+    Private Sub btkeluar_Click_1(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
+        Close()
     End Sub
 End Class
