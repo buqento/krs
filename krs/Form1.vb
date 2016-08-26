@@ -2,7 +2,6 @@
 Public Class flogin
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles btnlogin.Click
-
         Dim query, user, pass As String
         user = tusername.Text
         pass = tpassword.Text
@@ -42,17 +41,10 @@ Public Class flogin
         End If
     End Sub
 
-    Private Sub tusername_TextChanged(sender As System.Object, e As System.EventArgs) Handles tusername.TextChanged
-
-    End Sub
-
     Private Sub tpassword_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tpassword.KeyPress
         If (e.KeyChar = Chr(13)) Then
             btnlogin.Focus()
         End If
     End Sub
 
-    Private Sub tpassword_TextChanged(sender As System.Object, e As System.EventArgs) Handles tpassword.TextChanged
-
-    End Sub
 End Class

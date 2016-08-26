@@ -12,4 +12,6 @@ F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fdatamahasiswa.resources
 F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fmtkuliah.resources
 F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fkrs.resources
 F:\Developer\VB.net\krs\krs\bin\Debug\krs.exe.config
-F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.Form6.resources
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.vbprojResolveAssemblyReference.cache
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fcetakkrs.resources
+F:\Developer\VB.net\krs\krs\obj\x86\Debug\krs.fmenucetaklaporan.resources

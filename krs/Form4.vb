@@ -55,10 +55,6 @@ Public Class fmtkuliah
         End If
     End Sub
 
-    Private Sub tkodematakuliah_TextChanged(sender As System.Object, e As System.EventArgs) Handles tkodematakuliah.TextChanged
-
-    End Sub
-
     Private Sub tnamamatakuliah_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tnamamatakuliah.KeyPress
         If (e.KeyChar = Chr(13)) Then
             tsks.Focus()
@@ -72,9 +68,8 @@ Public Class fmtkuliah
     End Sub
 
     Private Sub btsimpan_Click(sender As System.Object, e As System.EventArgs) Handles btsimpan.Click
-        Dim mycmd As New MySqlCommand("INSERT INTO data_mata_kuliah (kode_mata_kuliah,nama_mata_kuliah,sks,semester,tahun_ajaran,jenjang_pendidikan,program_studi,dosen_pengampu) " _
+        Dim mycmd As New MySqlCommand("INSERT INTO data_mata_kuliah (kode_mata_kuliah,nama_mata_kuliah,sks,semester,tahun_ajaran,jenjang_pendidikan,program_studi,dosen_pengajar) " _
                                     + "VALUES ('" & tkodematakuliah.Text & "','" & tnamamatakuliah.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & cbtahunajaran.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "','" & tkodedosen.Text & "')", connectMySQL)
-
         If (tkodematakuliah.Text <> "" And tnamamatakuliah.Text <> "" And tsks.Text <> "" And tkodedosen.Text <> "") Then
             Try
                 If mycmd.ExecuteNonQuery() = 1 Then
@@ -87,12 +82,7 @@ Public Class fmtkuliah
             End Try
         Else
             MsgBox("Periksa inputan data")
-
         End If
-    End Sub
-
-    Private Sub bthapus_Click(sender As System.Object, e As System.EventArgs) Handles bthapus.Click
-
     End Sub
 
     Private Sub btkeluar_Click_1(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click

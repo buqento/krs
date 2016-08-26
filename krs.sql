@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2016 at 09:32 AM
+-- Generation Time: Aug 26, 2016 at 07:49 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -28,27 +28,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `data_krs` (
   `no_krs` varchar(50) NOT NULL,
-  `nim` varchar(9) NOT NULL,
+  `no_induk_mahasiswa` varchar(9) NOT NULL,
   `kode_mata_kuliah` varchar(10) NOT NULL,
-  `nama_matakuliah` varchar(50) NOT NULL,
-  `sks` int(11) NOT NULL,
-  `semester` int(1) NOT NULL,
-  `dosen_pengampu` varchar(50) NOT NULL,
-  `tahun_akademik` int(11) NOT NULL
+  `dosen_pengajar` varchar(50) NOT NULL,
+  `tahun_akademik` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_krs`
 --
 
-INSERT INTO `data_krs` (`no_krs`, `nim`, `kode_mata_kuliah`, `nama_matakuliah`, `sks`, `semester`, `dosen_pengampu`, `tahun_akademik`) VALUES
-('KRS-201509070001', '222222222', 'mk-001', 'Matematika Diskrit', 4, 1, 'Buqento, S.Kom.', 2015),
-('KRS-201509070001', '222222222', 'mk-002', 'Elektronika Dasar', 3, 1, 'King Richard, MT.', 2015),
-('KRS-201509070001', '666666666', 'mk-002', 'Elektronika Dasar', 3, 1, 'King Richard, MT.', 2015),
-('KRS-201509070001', '666666666', 'mk-003', 'Arsitektur Komputer', 4, 1, 'Franseska, M.Kom.', 2015),
-('KRS-201509070001', '777777777', 'mk-003', 'Arsitektur Komputer', 4, 1, 'Franseska, M.Kom.', 2015),
-('KRS-201509070001', '666666666', 'mk-001', 'Matematika Diskrit', 4, 1, 'Buqento, S.Kom.', 2015),
-('KRS-201509070001', '111111111', 'mk-001', 'Matematika Diskrit', 4, 1, 'Buqento, S.Kom.', 2015);
+INSERT INTO `data_krs` (`no_krs`, `no_induk_mahasiswa`, `kode_mata_kuliah`, `dosen_pengajar`, `tahun_akademik`) VALUES
+('KRS-001', '150101001', '14111', 'Lukman Saleh,BSB.,M.Sc /Amran Suatkab,S.Kom/Asiste', '2015'),
+('krs-009', '150101001', '10720', 'Lukman Saleh., BSB., M.Sc/David Leimena,S.Pd', '2015'),
+('krs-009', '150101001', '14111', 'Lukman Saleh,BSB.,M.Sc /Amran Suatkab,S.Kom/Asiste', '2015'),
+('krs-008', '150101002', '10330', 'Lukman Saleh.,BSB.,M.Sc/Subhan Ramdhani, S.Kom/Asi', '2015'),
+('krs-003', '150101001', '11330', 'R. D Syaranamual,.S.Si.,M.Si', '2015');
 
 -- --------------------------------------------------------
 
@@ -73,12 +68,17 @@ CREATE TABLE `data_mahasiswa` (
 --
 
 INSERT INTO `data_mahasiswa` (`nim`, `nama_lengkap`, `jenis_kelamin`, `tempat_lahir`, `tanggal`, `agama`, `alamat`, `jenjang_pendidikan`, `program_studi`) VALUES
-('111111111', 'King Richard', 'L', 'Masohi', '2016-08-23', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Teknik Informatika'),
-('222222222', 'Theresia', 'L', '', '2016-08-23', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Sistem Informasi'),
-('333333333', 'Nama saya', 'L', '', '2016-08-21', 'Kristen Protestan', 'Alamat Rumah', 'SMU', 'Teknik Informatika'),
-('444444444', 'Nama saya', 'L', '', '1990-10-25', 'Kristen Protestan', 'Alamat Rumah', 'S1', 'Teknik Informatika'),
-('666666666', 'Nama saya', 'P', '', '2016-08-21', 'Kristen Protestan', 'Alamat Rumah', 'SMU', 'Teknik Informatika'),
-('777777777', 'Britney', 'P', '', '1990-08-21', 'Katolik', 'Alamat Kantor', 'S2', 'Sistem Informasi');
+('150101001', 'Abdul Jaiz Djokdja', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101002', 'Abdul Jalil Duila', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101003', 'Abdul Malik Drakel', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101004', 'Abdur Rosyid Ridwan', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101005', 'Adi Aru Saputra', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101006', 'Adi Rahman Pelupessy', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101007', 'Afrila Syahriany Mahulauw', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101008', 'Ahmad Agung R. Pelupessy', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101009', 'Al Yusri Faldi', 'L', 'Ambon', '1990-08-23', 'Islam', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101010', 'Alberth Van Basten Wakim', 'L', 'Ambon', '1990-08-23', 'Kristen Protestan', 'Jl. Jalan', 'S1', 'Teknik Informatika'),
+('150101012', 'Aldi Wahab Mukandar', 'L', 'Masohi', '1995-08-25', 'Islam', 'Galunggung', 'S1', 'Teknik Informatika');
 
 -- --------------------------------------------------------
 
@@ -87,24 +87,28 @@ INSERT INTO `data_mahasiswa` (`nim`, `nama_lengkap`, `jenis_kelamin`, `tempat_la
 --
 
 CREATE TABLE `data_mata_kuliah` (
-  `kode_mata_kuliah` varchar(10) NOT NULL,
+  `kode_mk` varchar(10) NOT NULL,
   `nama_mata_kuliah` varchar(50) NOT NULL,
   `sks` int(11) NOT NULL,
   `semester` int(2) NOT NULL,
   `tahun_ajaran` int(11) NOT NULL,
   `jenjang_pendidikan` varchar(10) NOT NULL,
   `program_studi` varchar(50) NOT NULL,
-  `dosen_pengampu` varchar(50) NOT NULL
+  `dosen_pengajar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_mata_kuliah`
 --
 
-INSERT INTO `data_mata_kuliah` (`kode_mata_kuliah`, `nama_mata_kuliah`, `sks`, `semester`, `tahun_ajaran`, `jenjang_pendidikan`, `program_studi`, `dosen_pengampu`) VALUES
-('mk-001', 'Matematika Diskrit', 4, 1, 2017, 'S1', 'Teknik Informatika', 'Buqento, S.Kom.'),
-('mk-002', 'Elektronika Dasar', 3, 1, 2016, 'S1', 'Teknik Informatika', 'King Richard, MT.'),
-('mk-003', 'Arsitektur Komputer', 4, 1, 2016, 'S1', 'Teknik Informatika', 'Franseska, M.Kom.');
+INSERT INTO `data_mata_kuliah` (`kode_mk`, `nama_mata_kuliah`, `sks`, `semester`, `tahun_ajaran`, `jenjang_pendidikan`, `program_studi`, `dosen_pengajar`) VALUES
+('10330', 'Pengantar Teknologi Informasi', 2, 1, 2016, 'S1', 'Teknik Informatika', 'Lukman Saleh.,BSB.,M.Sc/Subhan Ramdhani, S.Kom/Asi'),
+('10521', 'Bahasa Inggris 1', 2, 1, 2016, 'S1', 'Teknik Informatika', 'Sepsi Caroline T.S.S.,M.Hum'),
+('10631', 'Matematika Dasar', 3, 1, 2016, 'S1', 'Teknik Informatika', 'Mursaid Dahlan, S.Si, M.Pd'),
+('10720', 'Bahasa Indonesia', 2, 1, 2016, 'S1', 'Teknik Informatika', 'Lukman Saleh., BSB., M.Sc/David Leimena,S.Pd'),
+('11330', 'Organisasi & Arsitektur Komputer', 3, 1, 2016, 'S1', 'Teknik Informatika', 'R. D Syaranamual,.S.Si.,M.Si'),
+('14036', 'Logika Informatika', 3, 1, 2016, 'S1', 'Teknik Informatika', 'Dr. Darmin David.,M.Si'),
+('14111', 'Prak. Algoritma & Pemrograman (C++)', 1, 1, 2016, 'S1', 'Teknik Informatika', 'Lukman Saleh,BSB.,M.Sc /Amran Suatkab,S.Kom/Asiste');
 
 -- --------------------------------------------------------
 
@@ -141,7 +145,7 @@ ALTER TABLE `data_mahasiswa`
 -- Indexes for table `data_mata_kuliah`
 --
 ALTER TABLE `data_mata_kuliah`
-  ADD PRIMARY KEY (`kode_mata_kuliah`);
+  ADD PRIMARY KEY (`kode_mk`);
 
 --
 -- Indexes for table `data_user`

@@ -182,32 +182,16 @@ Public Class fdatamahasiswa
         cbprogramstudi.SelectedIndex = 0
     End Sub
 
-    Private Sub TabPage1_Click(sender As System.Object, e As System.EventArgs) Handles TabPage1.Click
-
-    End Sub
-
     Private Sub tnama_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tnama.KeyPress
         If (e.KeyChar = Chr(13)) Then
             tnim.Focus()
         End If
     End Sub
 
-    Private Sub tnama_TextChanged(sender As System.Object, e As System.EventArgs) Handles tnama.TextChanged
-
-    End Sub
-
     Private Sub tnim_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tnim.KeyPress
         If (e.KeyChar = Chr(13)) Then
             cari_data_mahasiswa()
         End If
-    End Sub
-
-    Private Sub tnim_TextChanged(sender As System.Object, e As System.EventArgs) Handles tnim.TextChanged
-
-    End Sub
-
-    Private Sub rbl_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbl.CheckedChanged
-
     End Sub
 
     Private Sub rbl_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles rbl.KeyPress
@@ -222,18 +206,10 @@ Public Class fdatamahasiswa
         End If
     End Sub
 
-    Private Sub dtptanggal_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtptanggal.ValueChanged
-
-    End Sub
-
     Private Sub cbagama_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles cbagama.KeyPress
         If (e.KeyChar = Chr(13)) Then
             rtalamat.Focus()
         End If
-    End Sub
-
-    Private Sub cbagama_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbagama.SelectedIndexChanged
-
     End Sub
 
     Private Sub rtalamat_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles rtalamat.KeyPress
@@ -242,18 +218,10 @@ Public Class fdatamahasiswa
         End If
     End Sub
 
-    Private Sub rtalamat_TextChanged(sender As System.Object, e As System.EventArgs) Handles rtalamat.TextChanged
-
-    End Sub
-
     Private Sub cbprogramstudi_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles cbprogramstudi.KeyPress
         If (e.KeyChar = Chr(13)) Then
             btsimpan.Focus()
         End If
-    End Sub
-
-    Private Sub cbprogramstudi_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbprogramstudi.SelectedIndexChanged
-
     End Sub
 
     Private Sub cbprogramstudi2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbprogramstudi2.SelectedIndexChanged

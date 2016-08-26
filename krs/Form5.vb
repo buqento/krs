@@ -34,7 +34,7 @@ Public Class fkrs
             If drd.HasRows Then
                 tnamamk.Text = drd.Item("nama_mata_kuliah")
                 tsks.Text = drd.Item("sks")
-                tdosenpengampu.Text = drd.Item("dosen_pengampu")
+                tdosenpengampu.Text = drd.Item("dosen_pengajar")
             End If
         Catch ex As Exception
         End Try
@@ -43,7 +43,7 @@ Public Class fkrs
     Private Sub filter_data_krs()
         openConnectionsMySQL()
         Dim query As String
-        query = "SELECT * FROM data_krs WHERE nim='" & tnim.Text & "'"
+        query = "SELECT * FROM data_krs WHERE no_induk_mahasiswa='" & tnim.Text & "'"
         Try
             myadp = New MySqlDataAdapter(query, connectMySQL)
             dt.Clear()
@@ -71,35 +71,23 @@ Public Class fkrs
 
     Private Sub btkontrak_Click(sender As System.Object, e As System.EventArgs) Handles btkontrak.Click
         openConnectionsMySQL()
-        Dim cmd_hitung As New MySqlCommand("SELECT COUNT(nim) FROM data_krs WHERE nim='" & tnim.Text & "' AND kode_mata_kuliah='" & tkodemk.Text & "'", connectMySQL)
-        Dim mycmd As New MySqlCommand("INSERT INTO data_krs(no_krs,nim,kode_mata_kuliah,nama_matakuliah,sks,semester,dosen_pengajar,tahun_akademik) " _
+        Dim cmd_hitung As New MySqlCommand("SELECT COUNT(nim) FROM data_krs WHERE no_induk_mahasiswa='" & tnim.Text & "' AND kode_mata_kuliah='" & tkodemk.Text & "'", connectMySQL)
+        Dim mycmd As New MySqlCommand("INSERT INTO data_krs(no_krs,no_induk_mahasiswa,kode_mata_kuliah,nama_matakuliah,sks,semester,dosen_pengajar,tahun_akademik) " _
                              + "VALUES ('" & tnokrs.Text & "','" & tnim.Text & "','" & tkodemk.Text & "','" & tnamamk.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & tdosenpengampu.Text & "','" & cbtahunakademik.Text & "')", connectMySQL)
         Dim jumlah As Integer
-
-        jumlah = cmd_hitung.ExecuteScalar
-        If jumlah >= 1 Then
-            MsgBox("Data sudah diinput")
+        If (tnokrs.Text <> "" And tnim.Text <> "" And tkodemk.Text <> "") Then
+            Try
+                If mycmd.ExecuteNonQuery() = 1 Then
+                    MsgBox("Data telah tersimpan")
+                    Call filter_data_krs()
+                    Exit Sub
+                End If
+            Catch ex As MySqlException
+                MsgBox("Insert data gagal")
+            End Try
         Else
-            If (tnokrs.Text <> "" And tnim.Text <> "" And tkodemk.Text <> "") Then
-                Try
-                    If mycmd.ExecuteNonQuery() = 1 Then
-                        MsgBox("Data telah tersimpan")
-                        Call filter_data_krs()
-                        Exit Sub
-                    End If
-                Catch ex As MySqlException
-                    MsgBox("Insert data gagal")
-                End Try
-            Else
-                MsgBox("Periksa inputan data")
-
-            End If
-
+            MsgBox("Periksa inputan data")
         End If
-    End Sub
-
-    Private Sub btkeluar_Click(sender As System.Object, e As System.EventArgs)
-        Close()
     End Sub
 
     Private Sub tnim_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tnim.KeyPress
@@ -117,21 +105,13 @@ Public Class fkrs
         End If
     End Sub
 
-    Private Sub tnim_TextChanged(sender As System.Object, e As System.EventArgs) Handles tnim.TextChanged
-
-    End Sub
-
     Private Sub tnokrs_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tnokrs.KeyPress
         If (e.KeyChar = Chr(13)) Then
             tnim.Focus()
         End If
     End Sub
 
-    Private Sub tnokrs_TextChanged(sender As System.Object, e As System.EventArgs) Handles tnokrs.TextChanged
-
-    End Sub
-
-    Private Sub btkeluar_Click_1(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
+    Private Sub btkeluar_Click(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
         Close()
     End Sub
 End Class

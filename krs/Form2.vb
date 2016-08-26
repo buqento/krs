@@ -16,7 +16,7 @@
         fkrs.Show()
     End Sub
 
-    Private Sub fmenuutama_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+    Private Sub ReportToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ReportToolStripMenuItem.Click
+        fmenucetaklaporan.Show()
     End Sub
 End Class
