@@ -320,6 +320,7 @@ Partial Class fkrs
         Me.tnokrs.Name = "tnokrs"
         Me.tnokrs.Size = New System.Drawing.Size(206, 22)
         Me.tnokrs.TabIndex = 9
+        Me.tnokrs.Text = "KRS-001"
         '
         'btkeluar
         '

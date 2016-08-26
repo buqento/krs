@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2016 at 07:49 AM
+-- Generation Time: Aug 26, 2016 at 09:51 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -29,21 +29,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `data_krs` (
   `no_krs` varchar(50) NOT NULL,
   `no_induk_mahasiswa` varchar(9) NOT NULL,
-  `kode_mata_kuliah` varchar(10) NOT NULL,
-  `dosen_pengajar` varchar(50) NOT NULL,
-  `tahun_akademik` varchar(4) NOT NULL
+  `kode_mata_kuliah` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_krs`
 --
 
-INSERT INTO `data_krs` (`no_krs`, `no_induk_mahasiswa`, `kode_mata_kuliah`, `dosen_pengajar`, `tahun_akademik`) VALUES
-('KRS-001', '150101001', '14111', 'Lukman Saleh,BSB.,M.Sc /Amran Suatkab,S.Kom/Asiste', '2015'),
-('krs-009', '150101001', '10720', 'Lukman Saleh., BSB., M.Sc/David Leimena,S.Pd', '2015'),
-('krs-009', '150101001', '14111', 'Lukman Saleh,BSB.,M.Sc /Amran Suatkab,S.Kom/Asiste', '2015'),
-('krs-008', '150101002', '10330', 'Lukman Saleh.,BSB.,M.Sc/Subhan Ramdhani, S.Kom/Asi', '2015'),
-('krs-003', '150101001', '11330', 'R. D Syaranamual,.S.Si.,M.Si', '2015');
+INSERT INTO `data_krs` (`no_krs`, `no_induk_mahasiswa`, `kode_mata_kuliah`) VALUES
+('KRS-001', '150101007', '10910');
 
 -- --------------------------------------------------------
 
@@ -106,6 +100,7 @@ INSERT INTO `data_mata_kuliah` (`kode_mk`, `nama_mata_kuliah`, `sks`, `semester`
 ('10521', 'Bahasa Inggris 1', 2, 1, 2016, 'S1', 'Teknik Informatika', 'Sepsi Caroline T.S.S.,M.Hum'),
 ('10631', 'Matematika Dasar', 3, 1, 2016, 'S1', 'Teknik Informatika', 'Mursaid Dahlan, S.Si, M.Pd'),
 ('10720', 'Bahasa Indonesia', 2, 1, 2016, 'S1', 'Teknik Informatika', 'Lukman Saleh., BSB., M.Sc/David Leimena,S.Pd'),
+('10910', 'Prak. Basis Data (MySql)', 1, 1, 2016, 'S1', 'Teknik Informatika', 'Lukman Saleh.,BSB.,M.Sc/Fitrah Latupono, S.Kom/Asi'),
 ('11330', 'Organisasi & Arsitektur Komputer', 3, 1, 2016, 'S1', 'Teknik Informatika', 'R. D Syaranamual,.S.Si.,M.Si'),
 ('14036', 'Logika Informatika', 3, 1, 2016, 'S1', 'Teknik Informatika', 'Dr. Darmin David.,M.Si'),
 ('14111', 'Prak. Algoritma & Pemrograman (C++)', 1, 1, 2016, 'S1', 'Teknik Informatika', 'Lukman Saleh,BSB.,M.Sc /Amran Suatkab,S.Kom/Asiste');

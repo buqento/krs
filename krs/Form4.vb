@@ -68,7 +68,7 @@ Public Class fmtkuliah
     End Sub
 
     Private Sub btsimpan_Click(sender As System.Object, e As System.EventArgs) Handles btsimpan.Click
-        Dim mycmd As New MySqlCommand("INSERT INTO data_mata_kuliah (kode_mata_kuliah,nama_mata_kuliah,sks,semester,tahun_ajaran,jenjang_pendidikan,program_studi,dosen_pengajar) " _
+        Dim mycmd As New MySqlCommand("INSERT INTO data_mata_kuliah (kode_mk,nama_mata_kuliah,sks,semester,tahun_ajaran,jenjang_pendidikan,program_studi,dosen_pengajar) " _
                                     + "VALUES ('" & tkodematakuliah.Text & "','" & tnamamatakuliah.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & cbtahunajaran.Text & "','" & cbjenjangpendidikan.Text & "','" & cbprogramstudi.Text & "','" & tkodedosen.Text & "')", connectMySQL)
         If (tkodematakuliah.Text <> "" And tnamamatakuliah.Text <> "" And tsks.Text <> "" And tkodedosen.Text <> "") Then
             Try

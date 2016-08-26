@@ -27,7 +27,7 @@ Public Class fkrs
         openConnectionsMySQL()
         Try
             Dim str As String
-            str = "SELECT * FROM data_mata_kuliah WHERE kode_mata_kuliah='" & tkodemk.Text & "'"
+            str = "SELECT * FROM data_mata_kuliah WHERE kode_mk='" & tkodemk.Text & "'"
             cmd = New MySqlCommand(str, connectMySQL)
             drd = cmd.ExecuteReader
             drd.Read()
@@ -72,9 +72,8 @@ Public Class fkrs
     Private Sub btkontrak_Click(sender As System.Object, e As System.EventArgs) Handles btkontrak.Click
         openConnectionsMySQL()
         Dim cmd_hitung As New MySqlCommand("SELECT COUNT(nim) FROM data_krs WHERE no_induk_mahasiswa='" & tnim.Text & "' AND kode_mata_kuliah='" & tkodemk.Text & "'", connectMySQL)
-        Dim mycmd As New MySqlCommand("INSERT INTO data_krs(no_krs,no_induk_mahasiswa,kode_mata_kuliah,nama_matakuliah,sks,semester,dosen_pengajar,tahun_akademik) " _
-                             + "VALUES ('" & tnokrs.Text & "','" & tnim.Text & "','" & tkodemk.Text & "','" & tnamamk.Text & "','" & tsks.Text & "','" & cbsemester.Text & "','" & tdosenpengampu.Text & "','" & cbtahunakademik.Text & "')", connectMySQL)
-        Dim jumlah As Integer
+        Dim mycmd As New MySqlCommand("INSERT INTO data_krs(no_krs,no_induk_mahasiswa,kode_mata_kuliah) " _
+                             + "VALUES ('" & tnokrs.Text & "','" & tnim.Text & "','" & tkodemk.Text & "')", connectMySQL)
         If (tnokrs.Text <> "" And tnim.Text <> "" And tkodemk.Text <> "") Then
             Try
                 If mycmd.ExecuteNonQuery() = 1 Then
