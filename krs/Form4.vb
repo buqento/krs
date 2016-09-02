@@ -3,6 +3,31 @@
 Public Class fmtkuliah
     Dim myadp As MySqlDataAdapter
     Dim dt As New DataTable
+    Dim cmd As MySqlCommand
+    Dim drd As MySqlDataReader
+
+
+    Private Sub cari_data_matakuliah()
+        openConnectionsMySQL()
+        Try
+            Dim str As String
+            str = "SELECT * FROM  data_mata_kuliah WHERE kode_mk='" & tkodematakuliah.Text & "'"
+            cmd = New MySqlCommand(str, connectMySQL)
+            drd = cmd.ExecuteReader
+            drd.Read()
+            If drd.HasRows Then
+                tnamamatakuliah.Text = drd.Item("nama_mata_kuliah")
+                tsks.Text = drd.Item("sks")
+                cbsemester.Text = drd.Item("semester")
+                cbtahunajaran.Text = drd.Item("tahun_ajaran")
+                cbjenjangpendidikan.Text = drd.Item("jenjang_pendidikan")
+                cbprogramstudi.Text = drd.Item("program_studi")
+                tkodedosen.Text = drd.Item("dosen_pengajar")
+                MsgBox("Kode Mata Kuliah telah terdaftar")
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
 
     Private Sub baca_data_matakuliah()
         Dim query As String
@@ -51,7 +76,7 @@ Public Class fmtkuliah
 
     Private Sub tkodematakuliah_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles tkodematakuliah.KeyPress
         If (e.KeyChar = Chr(13)) Then
-            tnamamatakuliah.Focus()
+            cari_data_matakuliah()
         End If
     End Sub
 

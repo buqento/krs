@@ -44,6 +44,7 @@ Public Class fdatamahasiswa
                 rtalamat.Text = drd.Item("alamat")
                 cbjenjangpendidikan.Text = drd.Item("jenjang_pendidikan")
                 cbprogramstudi.Text = drd.Item("program_studi")
+                MsgBox("NIM telah terdaftar")
             End If
         Catch ex As Exception
         End Try
@@ -231,4 +232,5 @@ Public Class fdatamahasiswa
     Private Sub btkeluar_Click(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
         Close()
     End Sub
+
 End Class
