@@ -133,7 +133,7 @@ Public Class fdatamahasiswa
         End If
         If tnim.Text <> "" Then
             Dim mycmd As New MySqlCommand("UPDATE data_mahasiswa SET " _
-                                          + " nama_lengkap='" & tnama.Text & "',jenis_kelamin='" & jenis & "',tanggal='" & Format(dtptanggal.Value, "yyyy-MM-dd") & "',agama='" & cbagama.Text & "',alamat='" & rtalamat.Text & "',jenjang_pendidikan='" & cbjenjangpendidikan.Text & "',program_studi='" & cbprogramstudi.Text & "'" _
+                                          + " nama_lengkap='" & tnama.Text & "',jenis_kelamin='" & jenis & "',tempat_lahir='" & ttempatlahir.Text & "',tanggal='" & Format(dtptanggal.Value, "yyyy-MM-dd") & "',agama='" & cbagama.Text & "',alamat='" & rtalamat.Text & "',jenjang_pendidikan='" & cbjenjangpendidikan.Text & "',program_studi='" & cbprogramstudi.Text & "'" _
                                           + " WHERE nim='" & tnim.Text & "'", connectMySQL)
             Try
                 If mycmd.ExecuteNonQuery() = 1 Then

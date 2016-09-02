@@ -40,7 +40,7 @@ Partial Class flogin
         Me.tusername.Name = "tusername"
         Me.tusername.Size = New System.Drawing.Size(156, 22)
         Me.tusername.TabIndex = 0
-        Me.tusername.Text = "admin"
+        Me.tusername.Text = "STIKOM"
         '
         'tpassword
         '
@@ -49,7 +49,7 @@ Partial Class flogin
         Me.tpassword.Name = "tpassword"
         Me.tpassword.Size = New System.Drawing.Size(156, 22)
         Me.tpassword.TabIndex = 1
-        Me.tpassword.Text = "password"
+        Me.tpassword.Text = "stikomambon"
         Me.tpassword.UseSystemPasswordChar = True
         '
         'btncancel

@@ -88,4 +88,42 @@ Public Class fmtkuliah
     Private Sub btkeluar_Click_1(sender As System.Object, e As System.EventArgs) Handles btkeluar.Click
         Close()
     End Sub
+
+    Private Sub btubah_Click(sender As System.Object, e As System.EventArgs) Handles btubah.Click
+        openConnectionsMySQL()
+        Dim jenis As String
+
+        If tkodematakuliah.Text <> "" Then
+            Dim mycmd As New MySqlCommand("UPDATE data_mata_kuliah SET " _
+                                          + " nama_mata_kuliah='" & tnamamatakuliah.Text & "',sks='" & tsks.Text & "',semester='" & cbsemester.Text & "',tahun_ajaran='" & cbtahunajaran.Text & "',jenjang_pendidikan='" & cbjenjangpendidikan.Text & "',program_studi='" & cbprogramstudi.Text & "',dosen_pengajar='" & tkodedosen.Text & "'" _
+                                          + " WHERE kode_mk='" & tkodematakuliah.Text & "'", connectMySQL)
+            Try
+                If mycmd.ExecuteNonQuery() = 1 Then
+                    MsgBox("Data telah diubah")
+                    Call baca_data_matakuliah()
+                End If
+            Catch ex As MySqlException
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MsgBox("Masukkan Kode Mata Kuliah")
+        End If
+    End Sub
+
+    Private Sub bthapus_Click(sender As System.Object, e As System.EventArgs) Handles bthapus.Click
+        openConnectionsMySQL()
+        If tkodematakuliah.Text <> "" Then
+            Dim mycmd As New MySqlCommand("DELETE FROM data_mata_kuliah WHERE kode_mk='" & tkodematakuliah.Text & "'", connectMySQL)
+            Try
+                If mycmd.ExecuteNonQuery() = 1 Then
+                    MsgBox("Hapus data berhasil")
+                    Call baca_data_matakuliah()
+                End If
+            Catch ex As MySqlException
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MsgBox("Masukkan Kode Mata Kuliah")
+        End If
+    End Sub
 End Class
