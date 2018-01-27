@@ -1,3 +1,2 @@
 # krs
-Kartu Rencana Studi
-Create use vb.Net
+Kartu Rencana Studi VB.Net
