@@ -1,2 +1,2 @@
 # krs
-Kartu Rencana Studi VB.Net
+Kartu Rencana Studi
